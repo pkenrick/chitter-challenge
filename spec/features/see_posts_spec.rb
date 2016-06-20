@@ -1,9 +1,12 @@
 feature 'See posts' do
   
   scenario 'user can view posts on webpage' do
-    Post.create(text: 'This is my first post on Chitter.', time: Time.new)
-    visit('/posts')
-    expect(page).to have_content('This is my first post on Chitter.')
+    sign_up
+    sign_in
+    visit('/posts/new')
+    fill_in :text, with: 'I am now adding a new post!'
+    click_button 'Post'
+    expect(page).to have_content('I am now adding a new post!')
   end
 
 end

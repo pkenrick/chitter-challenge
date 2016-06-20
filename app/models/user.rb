@@ -4,6 +4,8 @@ class User
 
   include DataMapper::Resource
 
+  # has n, :posts, through: Resource
+
   attr_reader :password
   attr_accessor :password_confirmation
 
