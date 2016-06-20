@@ -1,0 +1,8 @@
+<h1>Posts</h1>
+
+<% @posts.each do |post| %>
+  <li>
+    Post: <%= post.text %>
+    Date/time: <%= post.time %>
+  </li>
+<% end %>
